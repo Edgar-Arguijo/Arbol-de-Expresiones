@@ -1,0 +1,11 @@
+C:\Users\hv_ca\Source\Repos\Arbol-de-Expresiones\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\hv_ca\Source\Repos\Arbol-de-Expresiones\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\hv_ca\Source\Repos\Arbol-de-Expresiones\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\hv_ca\Source\Repos\Arbol-de-Expresiones\WindowsFormsApp1\obj\Debug\Arboles_de_Expresiones.csproj.AssemblyReference.cache
+C:\Users\hv_ca\Source\Repos\Arbol-de-Expresiones\WindowsFormsApp1\obj\Debug\Arboles_de_Expresiones.csproj.SuggestedBindingRedirects.cache
+C:\Users\hv_ca\Source\Repos\Arbol-de-Expresiones\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.frmPrincipal.resources
+C:\Users\hv_ca\Source\Repos\Arbol-de-Expresiones\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\hv_ca\Source\Repos\Arbol-de-Expresiones\WindowsFormsApp1\obj\Debug\Arboles_de_Expresiones.csproj.GenerateResource.cache
+C:\Users\hv_ca\Source\Repos\Arbol-de-Expresiones\WindowsFormsApp1\obj\Debug\Arboles_de_Expresiones.csproj.CoreCompileInputs.cache
+C:\Users\hv_ca\Source\Repos\Arbol-de-Expresiones\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\hv_ca\Source\Repos\Arbol-de-Expresiones\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
