@@ -43,8 +43,6 @@ namespace WindowsFormsApp1.ClasesAuxiliares
 
         public Object Datos { get => datos; }
 
-
         #endregion
-
     }
 }

@@ -9,9 +9,9 @@ namespace WindowsFormsApp1.ClasesAuxiliares
         //Insercion de la cola
         private string precedencia = "+-*/^";
         private string[] delimitadores = { "+", "-", "*", "/", "^" };
-        private string[] operandos;
-        private string[] operadores;
-        private Queue colaExpresion;
+        private string[] operandos/*1234564*/;
+        private string[] operadores/*+-*/;
+        private Queue colaExpresion;/*2+2+2 = {2}{+}{2}{+}{2}*/
 
         //Creacion del arbol
         private string token;
@@ -44,13 +44,16 @@ namespace WindowsFormsApp1.ClasesAuxiliares
 
         #region Insercion_Cola
 
-        public void Insertar_EnCola(string expresion)
+        public void Insertar_EnCola(string expresion)/*Expresion = 2+2+5*3/8 */
         {
+            //operandos = {2},{2},{5},{3},{8}
             operandos = expresion.Split(delimitadores, StringSplitOptions.RemoveEmptyEntries);
+            //operadores {+},{+},{*},{/}
             operadores = expresion.Split(operandos, StringSplitOptions.RemoveEmptyEntries);
 
             for (int i = 0; colaExpresion.Count < operandos.Length + (operadores.Length - 1); i++)
             {
+                //Enqueue = Agregar en cola
                 colaExpresion.Enqueue(operandos[i]);
                 colaExpresion.Enqueue(operadores[i]);
             }
@@ -64,11 +67,15 @@ namespace WindowsFormsApp1.ClasesAuxiliares
         {
             while (colaExpresion.Count != 0)
             {
+                //{2}{+}{2}{+}{5}{*}{3}{/}{8}
                 token = (string)colaExpresion.Dequeue();
                 if (precedencia.IndexOf(token) < 0)
                 {
+                    //Mandamos a operandos
                     pilaOperandos.Push(new Nodo(token));
+                    //Pila dot para interpretar e imprimir
                     pilaDot.Push(new Nodo($"nodo{++i}[label=\"{token}\"]"));
+                    //Agregar todos los numeros 2,2,5,3,8
                 }
                 else
                 {
@@ -101,6 +108,7 @@ namespace WindowsFormsApp1.ClasesAuxiliares
 
         private void GuardarSubArbol()
         {
+            /*IZQ{2} - DER{2}*/
             Nodo derecho = (Nodo)pilaOperandos.Pop();
             Nodo izquierdo = (Nodo)pilaOperandos.Pop();
             pilaOperandos.Push(new Nodo(derecho, izquierdo, pilaOperadores.Peek()));
@@ -152,8 +160,6 @@ namespace WindowsFormsApp1.ClasesAuxiliares
         public void Limpiar()
         {
             Post = Pre = In = "";
-
-
         }
     }
 }

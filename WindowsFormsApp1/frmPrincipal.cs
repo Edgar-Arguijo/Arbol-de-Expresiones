@@ -60,6 +60,8 @@ namespace WindowsFormsApp1
                 raiz = arbol.CrearArbol();
                 arbol.Limpiar();
 
+                textBox1.Clear();
+
                 textBox1.AppendText($"PreOrden\r\n{arbol.InsertaPre(raiz)}");
                 textBox1.AppendText($"\r\nInOrden\r\n{arbol.InsertaIn(raiz)}");
                 textBox1.AppendText($"\r\nPostOrden\r\n{arbol.InsertaPost(raiz)}");
@@ -70,7 +72,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                MessageBox.Show("");
+                MessageBox.Show("Por favor ingrese una expresion");
             }
         }
 
