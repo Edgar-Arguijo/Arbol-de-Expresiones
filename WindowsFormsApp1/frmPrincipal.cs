@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
 using WindowsFormsApp1.ClasesAuxiliares;
+using System.Diagnostics;
 
 namespace WindowsFormsApp1
 {
@@ -20,10 +21,30 @@ namespace WindowsFormsApp1
 
         public frmPrincipal()
         {
+            GenerarBatch();
+
             InitializeComponent();
             arbol = new Arbol();
         }
-   
+
+        private void GenerarBatch()
+        {
+            string filename = $@"{path}\Batch.bat";
+            using (StreamWriter writer = File.CreateText(filename))
+            {
+                writer.WriteLine("@echo off");
+                writer.WriteLine($@"cd {path}");
+                writer.WriteLine("del Imagen.png");
+                writer.WriteLine("dot.exe - Tpng Arbol.dot - o Imagen.png");
+            }
+
+            Process ps = new Process();
+            ps.StartInfo.FileName = filename;
+            // add process to list
+            ps.Start();
+            ps.Close();
+        }
+
         int m, mx, my;
         
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
@@ -76,11 +97,13 @@ namespace WindowsFormsApp1
             }
         }
 
+        private string path = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+
         private void ShowTree()
         {
-            if (File.Exists(@"C:\Users\hv_ca\imagen.png"))
+            if (File.Exists($@"{path}\imagen.png"))
             {
-                using (FileStream img = new FileStream(@"C:\Users\hv_ca\Imagen.png", FileMode.Open))
+                using (FileStream img = new FileStream($@"{path}\imagen.png", FileMode.Open))
                 {
                     pctArbol.Image = Bitmap.FromStream(img);
                 }
