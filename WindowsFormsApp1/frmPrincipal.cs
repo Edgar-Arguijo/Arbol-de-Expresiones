@@ -35,7 +35,7 @@ namespace WindowsFormsApp1
                 writer.WriteLine("@echo off");
                 writer.WriteLine($@"cd {path}");
                 writer.WriteLine("del Imagen.png");
-                writer.WriteLine("dot.exe - Tpng Arbol.dot - o Imagen.png");
+                writer.WriteLine("dot.exe -Tpng Arbol.dot -o Imagen.png");
             }
 
             Process ps = new Process();
@@ -103,7 +103,7 @@ namespace WindowsFormsApp1
         {
             if (File.Exists($@"{path}\imagen.png"))
             {
-                using (FileStream img = new FileStream($@"{path}\imagen.png", FileMode.Open))
+                using (FileStream img = new FileStream($@"{path}\Imagen.png", FileMode.Open))
                 {
                     pctArbol.Image = Bitmap.FromStream(img);
                 }
