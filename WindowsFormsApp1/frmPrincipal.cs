@@ -56,7 +56,7 @@ namespace WindowsFormsApp1
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Environment.Exit(0);
         }
 
         private void btnMostrar_Click(object sender, EventArgs e)
@@ -77,7 +77,8 @@ namespace WindowsFormsApp1
         {
             if (txtExpresion.Text!="")
             {
-                arbol.Insertar_EnCola(txtExpresion.Text);
+                arbol.Insertar_EnCola(txtExpresion.Text.Replace('(', ' ').Replace(')', ' '));
+
                 raiz = arbol.CrearArbol();
                 arbol.Limpiar();
 
@@ -101,7 +102,7 @@ namespace WindowsFormsApp1
 
         private void ShowTree()
         {
-            if (File.Exists($@"{path}\imagen.png"))
+            if (File.Exists($@"{path}\Imagen.png"))
             {
                 using (FileStream img = new FileStream($@"{path}\Imagen.png", FileMode.Open))
                 {
