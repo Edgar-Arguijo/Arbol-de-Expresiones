@@ -71,6 +71,7 @@ namespace WindowsFormsApp1
                 pnlRegistro.Visible = true;
                 btnMostrar.Text = "Mostrar";
             }
+            ShowTree();
         }
 
         private void btnGraficar_Click(object sender, EventArgs e)
