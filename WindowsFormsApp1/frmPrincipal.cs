@@ -116,6 +116,11 @@ namespace WindowsFormsApp1
             }
         }
 
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://github.com/Edgar-Arguijo/Arbol-de-Expresiones");
+        }
+
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
             if (m == 1)

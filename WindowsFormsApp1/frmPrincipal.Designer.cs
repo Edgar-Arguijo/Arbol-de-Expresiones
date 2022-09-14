@@ -45,6 +45,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.pctArbol = new System.Windows.Forms.PictureBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.pnlContent.SuspendLayout();
             this.pnlRegistro.SuspendLayout();
@@ -52,6 +53,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctArbol)).BeginInit();
             this.SuspendLayout();
             // 
@@ -230,6 +232,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.linkLabel1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -248,6 +251,17 @@
             this.pctArbol.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctArbol.TabIndex = 1;
             this.pctArbol.TabStop = false;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(21, 22);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(100, 13);
+            this.linkLabel1.TabIndex = 0;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Proyecto en GitHub";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // frmPrincipal
             // 
@@ -274,6 +288,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctArbol)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -297,6 +313,7 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.PictureBox pctArbol;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
 
